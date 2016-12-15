@@ -21,7 +21,20 @@ class php::fpm::service(
     warning('php::fpm::service is private')
   }
 
-  $reload = "service ${service_name} reload"
+
+  #
+  ## Use of '${service_name}' here is not correct; we should be
+  ## referring to the Service's 'namevar'.
+  ##
+  ## Also, assuming that the 'service' utility is available everywhere
+  ## is less than ideal..
+  ##
+  ## XXX - for now, punt on it. Just go with the system's
+  ##       implementation of restart
+  #
+#  $reload = "service ${service_name} reload"
+
+  $reload = undef
 
   if $::osfamily == 'Debian' {
     # Precise upstart doesn't support reload signals, so use
