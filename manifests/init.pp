@@ -49,7 +49,7 @@ class php (
   $extensions     = {},
   $settings       = {},
   $package_prefix = $::php::params::package_prefix,
-  $fpm_pool_dir   = $::php::params::fmp_pool_dir,
+  $fpm_pool_dir   = $::php::params::fpm_pool_dir,
 ) inherits ::php::params {
 
   validate_string($ensure)

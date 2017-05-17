@@ -155,12 +155,12 @@ define php::fpm::pool (
   }
 
   if ($ensure == 'absent') {
-    file { "${::php::params::fpm_pool_dir}/${pool}.conf":
+    file { "${::php::fpm_pool_dir}/${pool}.conf":
       ensure => absent,
       notify => Class['::php::fpm::service'],
     }
   } else {
-    file { "${::php::params::fpm_pool_dir}/${pool}.conf":
+    file { "${::php::fpm_pool_dir}/${pool}.conf":
       ensure  => file,
       notify  => Class['::php::fpm::service'],
       require => Package[$real_package],
