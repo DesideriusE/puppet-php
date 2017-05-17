@@ -33,6 +33,9 @@
 #   to a sensible default depending on your operating system, like 'php-' or
 #   'php5-'.
 #
+# [*fpm_pool_dir*]
+#   FPM pool configuration directory. Defaults depends on OS.
+#
 class php (
   $ensure         = $::php::params::ensure,
   $manage_repos   = $::php::params::manage_repos,
@@ -46,6 +49,7 @@ class php (
   $extensions     = {},
   $settings       = {},
   $package_prefix = $::php::params::package_prefix,
+  $fpm_pool_dir   = $::php::params::fmp_pool_dir,
 ) inherits ::php::params {
 
   validate_string($ensure)
