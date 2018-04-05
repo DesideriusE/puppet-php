@@ -27,7 +27,7 @@ class php::params {
       $fpm_inifile             = "${config_root}/fpm/php.ini"
       $fpm_package_suffix      = 'fpm'
       $fpm_pool_dir            = "${config_root}/fpm/pool.d"
-      $fpm_service_name_prefix = 'php5-'
+      $fpm_servicename_prefix  = 'php5-'
       $fpm_user                = 'www-data'
       $fpm_group               = 'www-data'
       $embedded_package_suffix = 'embed'
@@ -64,7 +64,7 @@ class php::params {
       $fpm_inifile             = "${config_root}/fpm/php.ini"
       $fpm_package_suffix      = 'fpm'
       $fpm_pool_dir            = "${config_root}/fpm/pool.d"
-      $fpm_service_name_prefix = 'php-'
+      $fpm_servicename_prefix  = 'php-'
       $fpm_user                = 'wwwrun'
       $fpm_group               = 'www'
       $embedded_package_suffix = 'embed'
@@ -96,7 +96,7 @@ class php::params {
       $fpm_inifile             = '/etc/php.ini'
       $fpm_package_suffix      = 'fpm'
       $fpm_pool_dir            = '/etc/php-fpm.d'
-      $fpm_service_name_prefix = 'php-'
+      $fpm_servicename_prefix  = 'php-'
       $fpm_user                = 'apache'
       $fpm_group               = 'apache'
       $embedded_package_suffix = 'embedded'
@@ -122,7 +122,7 @@ class php::params {
       $fpm_inifile             = "${config_root}/php.ini"
       $fpm_package_suffix      = undef
       $fpm_pool_dir            = "${config_root}/php-fpm.d"
-      $fpm_service_name_prefix = 'php-'
+      $fpm_servicename_prefix  = 'php-'
       $fpm_user                = 'www'
       $fpm_group               = 'www'
       $embedded_package_suffix = 'embed'
