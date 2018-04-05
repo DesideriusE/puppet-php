@@ -49,7 +49,7 @@ class php (
   $extensions     = {},
   $settings       = {},
   $package_prefix = $::php::params::package_prefix,
-  $fpm_servicename_prefix = undef, #$::php::params::fpm_servicename_prefix,
+  $fpm_servicename_prefix = $::php::params::fpm_servicename_prefix,
   $fpm_pool_dir   = $::php::params::fpm_pool_dir,
 ) inherits ::php::params {
 
@@ -64,16 +64,6 @@ class php (
   validate_bool($phpunit)
   validate_hash($extensions)
   validate_hash($settings)
-
-  ## temporarily involve package_prefix in default fpm service name prefix
-  ## remove this again when callers are fixed
-  $_fpm_servicename_prefix = pick(
-    $fpm_servicename_prefix,
-    ($package_prefix == $::php::params::package_prefix) ? {
-       false => $package_prefix, default => undef
-    },
-    $::php::params::fpm_servicename_prefix
-  )
 
   # Deep merge global php settings
   $real_settings = deep_merge($settings, hiera_hash('php::settings', {}))

@@ -12,7 +12,7 @@
 #   Defines if the service is enabled
 #
 class php::fpm::service(
-  $service_name = "${::php::_fpm_servicename_prefix}fpm",
+  $service_name = "${::php::fpm_servicename_prefix}fpm",
   $ensure       = 'running',
   $enable       = $::php::params::fpm_service_enable,
 ) inherits ::php::params {
